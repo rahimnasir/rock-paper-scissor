@@ -52,34 +52,49 @@ const computerSelection = getComputerChoice();
 console.log("Player: "+playerSelection.toLowerCase() + ", Computer: "+computerSelection)
 console.log(playRound(playerSelection, computerSelection));
 */
-
-function game(){
-    let playerSelection = prompt()
-    let computerSelection = getComputerChoice()
-    let choices = "Player: "+playerSelection.toLowerCase() + ", Computer: "+computerSelection
-    let result = (playRound(playerSelection, computerSelection));
-
-    alert(choices + "\n" + result)
-}
-
 function scoreResult(){
-    let finalResult
-    if (playerScore > computerScore){
-        finalResult = "Player win by "+playerScore+"-"+computerScore
-    }else if (playerScore < computerScore){
-        finalResult = "Computer win by "+computerScore+"-"+playerScore
-    }else if (playerScore == computerScore){
-        finalResult = "Tie by "+computerScore+"-"+playerScore
-    }
-    return finalResult
+    
+    
 }
 
+function game(buttonValue){
+    let playerSelection = buttonValue
+    let computerSelection = getComputerChoice()
+    let playerChoices = "Player: "+playerSelection.toLowerCase()
+    let computerChoices = "Computer: "+computerSelection
+    let result = (playRound(playerSelection, computerSelection));
+    let score = "Player Score: "+playerScore+" --- Computer Score: "+computerScore
+
+    document.getElementById("player-choices").innerHTML = playerChoices
+    document.getElementById("computer-choices").innerHTML = computerChoices
+    document.getElementById("result").innerHTML = result
+    document.getElementById("score").innerHTML = score
+
+    if (playerScore >= 5){
+        document.getElementById("result").innerHTML = "Player Win!"
+    }else if (computerScore >= 5){
+        document.getElementById("result").innerHTML = "Computer Win!"
+    }
+
+}
+
+
+
+/*
 for(i = 1;i <= 5;i++){
     game()
 }
 
+
 alert(scoreResult())
 
+*/
+
+function getChoice(element){
+    let btnValue = element.innerText
+    console.log(btnValue)
+    game(btnValue)
+}
 
 
 

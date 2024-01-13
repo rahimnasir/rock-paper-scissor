@@ -2,9 +2,22 @@
 <html lang="en">
     <head>
         <meta charset="UTF-8">
-        <title>Rock, Paper and Scissors</title>
+        <title>Rock, Paper and Scissor</title>
     </head>
     <body>
-        <script src="script.js"></script>
+        <h1>Rock, Paper and Scissor Game</h1>
+        <p>Pick your choice.</p>
+        <br>
+        <button id="rock" onclick="getChoice(this)">Rock</button>
+        <button id="paper" onclick="getChoice(this)">Paper</button>
+        <button id="scissor" onclick="getChoice(this)">Scissor</button>
+        <br>
+        <div>
+            <p id="player-choices"></p>
+            <p id="computer-choices"></p>
+            <p id="result"></p>
+            <p id="score"></p>
+        </div>
+        <script src="script.js" defer></script>
     </body>
 </html>
